@@ -23,9 +23,9 @@ repository               : #"academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "james Wyatt Cross"
+  name             : "James Wyatt Cross"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Aerospace Engineering Undergraduate Student, University of Florida, Gainesville"
   location         : "Gainesville, FL"
   employer         : "University of Florida"
   uri              : # URL
