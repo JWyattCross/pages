@@ -8,7 +8,4 @@ date: 2025-01-01
 location: "Gainesville, Florida"
 ---
 
-Undergraduate course. Spring 2025, Summer 2025 terms.
-
-Instructor: Dr. Jonathan Brooks
-
+Undergraduate course. Spring 2025, Summer 2025 terms. Instructor: Dr. Jonathan Brooks
