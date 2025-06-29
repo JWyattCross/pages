@@ -5,7 +5,7 @@ venue: 'AIAA Region II Student Conference'
 
 collection: publications
 category: conferences
-permalink: 
+#permalink: 
 #excerpt: 'This paper is about fixing template issue #693.'
 date: 2023-04-04
 paperurl: 'files/James_Cross_-_Review_of_Autonomous_Technologies_for_a_Crewed_Exploration_of_the_Lunar_South_Pole.pdf'
