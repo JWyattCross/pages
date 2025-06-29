@@ -363,3 +363,12 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
       display: none;
     }
   }
+
+
+.archive__item a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
