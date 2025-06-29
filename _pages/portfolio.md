@@ -5,18 +5,18 @@ permalink: /portfolio/
 author_profile: true
 
 gallery1:
-  - image_path: /files/cfd.gif
-    url: /files/cfd.gif
+  - image_path: cfd.gif
+    url: /images/cfd.gif
     title: CFD Simulation
     alt: Animated CFD visualization of underwater vehicle
 
-  - image_path: /files/cfd_static.png
-    url: /files/cfd_static.png
+  - image_path: cfd_static.png
+    url: /images/cfd_static.png
     title: UUV Design
     alt: Static image of vehicle geometry
 
-  - image_path: /files/cfd_plots.png
-    url: /files/cfd_plots.png
+  - image_path: cfd_plots.png
+    url: /images/cfd_plots.png
     title: Coefficient Plots
     alt: Plot showing CFD-extracted coefficients
 
