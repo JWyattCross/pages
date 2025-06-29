@@ -6,17 +6,17 @@ author_profile: true
 
 gallery1:
   - image_path: cfd.gif
-    url: /images/cfd.gif
+    url: cfd.gif
     title: CFD Simulation
     alt: Animated CFD visualization of underwater vehicle
 
   - image_path: cfd_static.png
-    url: /images/cfd_static.png
+    url: cfd_static.png
     title: UUV Design
     alt: Static image of vehicle geometry
 
   - image_path: cfd_plots.png
-    url: /images/cfd_plots.png
+    url: cfd_plots.png
     title: Coefficient Plots
     alt: Plot showing CFD-extracted coefficients
 
@@ -35,7 +35,7 @@ For a more comprehensive overview of my work, including detailed reports and doc
 - Developed Python calculators to find coefficients from simulation and experimental data using a pseudoinverse to approximate a least squares solution  
 - Documented simulations for future replication in OpenFOAM as the UUV configuration changes  
 
-{% include gallery caption="Hydrodynamic coefficient estimation using CFD simulations." id="gallery1"%}
+{% include gallery id="gallery1"%}
 
 <!-- <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
   <img src="/files/cfd.gif" alt="CFD Simulation" style="max-width: 30%; border-radius: 8px;">
