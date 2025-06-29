@@ -12,7 +12,7 @@ You can also find my articles on [Google Scholar]({{ site.author.googlescholar }
 ## Conference Publications
 
 ### Development of an Outdoor Aerial Multi-Agent Robot Toolkit at the UF Autonomy Park
-**J. Cross and W. Dixon**
+**J. Cross and W. Dixon**  
 *Presented at AIAA Region II Student Conference, 2025*  
 [PDF](/files/James_Cross_-_Development_of_an_Outdoor_Aerial_Multi-Agent_Robot_Toolkit_at_the_UF_Autonomy_Park.pdf) [Slides](files/Slides_-_James_Cross_-_Development_of_an_Outdoor_Aerial_Multi-Agent_Robot_Toolkit_at_the_UF_Autonomy_Park.pdf)
 
