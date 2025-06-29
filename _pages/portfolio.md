@@ -11,18 +11,31 @@ For a more comprehensive overview of my work, including detailed reports and doc
 ## Professional Experience
 
 ### Naval Surface Warfare Center, Panama City Division  
-*Undergraduate Researcher* — Gainesville, FL | Sep 2022 – Present
+*Engineering Intern* — Panama City, FL | May 2024 – July 2024
 
 - Demonstrated CFD-based hydrodynamic coefficient determination for state estimation of a UUV  
 - Determined 39 of 43 total vehicle coefficients with the design of 18 different CFD simulations  
 - Developed Python calculators to find coefficients from simulation and experimental data using a pseudoinverse to approximate a least squares solution  
 - Documented simulations for future replication in OpenFOAM as the UUV configuration changes  
 
-<div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-  <img src="/files/cfd.gif" alt="CFD Simulation" style="max-width: 33%; border-radius: 8px;">
-  <img src="/files/cfd_static.png" alt="UUV Design" style="max-width: 33%; border-radius: 8px;">
-  <img src="/files/cfd_plots.png" alt="Coefficient Determination Design" style="max-width: 33%; border-radius: 8px;">
+<div class="susy-gallery">
+  <a href="/files/cfd.gif" class="susy-gallery-item" title="CFD Simulation">
+    <img src="/files/cfd.gif" alt="CFD Simulation" />
+  </a>
+  <a href="/files/cfd_static.png" class="susy-gallery-item" title="UUV Design">
+    <img src="/files/cfd_static.png" alt="UUV Design" />
+  </a>
+  <a href="/files/cfd_plots.png" class="susy-gallery-item" title="Coefficient Determination Design">
+    <img src="/files/cfd_plots.png" alt="Coefficient Determination Design" />
+  </a>
 </div>
+
+
+<!-- <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+  <img src="/files/cfd.gif" alt="CFD Simulation" style="max-width: 30%; border-radius: 8px;">
+  <img src="/files/cfd_static.png" alt="UUV Design" style="max-width: 30%; border-radius: 8px;">
+  <img src="/files/cfd_plots.png" alt="Coefficient Determination Design" style="max-width: 30%; border-radius: 8px;">
+</div> -->
 
 ---
 
