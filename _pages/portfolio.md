@@ -19,9 +19,9 @@ For a more comprehensive overview of my work, including detailed reports and doc
 - Documented simulations for future replication in OpenFOAM as the UUV configuration changes  
 
 <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-  <img src="/files/cfd.gif" alt="CFD Simulation" style="max-width: 48%; border-radius: 8px;">
-  <img src="/files/cfd_static.png" alt="UUV Design" style="max-width: 48%; border-radius: 8px;">
-  <img src="/files/cfd_plots.png" alt="Coefficient Determination Design" style="max-width: 48%; border-radius: 8px;">
+  <img src="/files/cfd.gif" alt="CFD Simulation" style="max-width: 33%; border-radius: 8px;">
+  <img src="/files/cfd_static.png" alt="UUV Design" style="max-width: 33%; border-radius: 8px;">
+  <img src="/files/cfd_plots.png" alt="Coefficient Determination Design" style="max-width: 33%; border-radius: 8px;">
 </div>
 
 ---
