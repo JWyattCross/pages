@@ -24,6 +24,6 @@ You can also find my articles on [Google Scholar]({{ site.author.googlescholar }
 
 ---
 
-## Journal Articles
+<!-- ## Journal Articles
 
-_TODO: Add more here._
+_TODO: Add more here._ -->
