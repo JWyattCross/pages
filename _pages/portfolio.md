@@ -3,6 +3,23 @@ layout: archive
 title: "Portfolio"
 permalink: /portfolio/
 author_profile: true
+
+gallery1:
+  - image_path: /files/cfd.gif
+    url: /files/cfd.gif
+    title: CFD Simulation
+    alt: Animated CFD visualization of underwater vehicle
+
+  - image_path: /files/cfd_static.png
+    url: /files/cfd_static.png
+    title: UUV Design
+    alt: Static image of vehicle geometry
+
+  - image_path: /files/cfd_plots.png
+    url: /files/cfd_plots.png
+    title: Coefficient Plots
+    alt: Plot showing CFD-extracted coefficients
+
 ---
 
 Welcome to my portfolio showcasing selected projects and demonstrations.  
@@ -18,18 +35,7 @@ For a more comprehensive overview of my work, including detailed reports and doc
 - Developed Python calculators to find coefficients from simulation and experimental data using a pseudoinverse to approximate a least squares solution  
 - Documented simulations for future replication in OpenFOAM as the UUV configuration changes  
 
-<div class="susy-gallery">
-  <a href="/files/cfd.gif" class="susy-gallery-item" title="CFD Simulation">
-    <img src="/files/cfd.gif" alt="CFD Simulation" />
-  </a>
-  <a href="/files/cfd_static.png" class="susy-gallery-item" title="UUV Design">
-    <img src="/files/cfd_static.png" alt="UUV Design" />
-  </a>
-  <a href="/files/cfd_plots.png" class="susy-gallery-item" title="Coefficient Determination Design">
-    <img src="/files/cfd_plots.png" alt="Coefficient Determination Design" />
-  </a>
-</div>
-
+{% include gallery.html caption="Hydrodynamic coefficient estimation using CFD simulations." %}
 
 <!-- <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
   <img src="/files/cfd.gif" alt="CFD Simulation" style="max-width: 30%; border-radius: 8px;">
@@ -54,32 +60,7 @@ For a more comprehensive overview of my work, including detailed reports and doc
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- 
 ## Selected Projects
 
 ---
@@ -96,48 +77,4 @@ This project showcases a 4WD rover navigating a simulated Martian terrain using 
 </div>
 
 *Implemented using ROS2 and RViz. Mapping accuracy improved over 10 trials.*
-
----
-
-### 🎮 Interactive Robot Arm Interface
-
-**Summer 2023 – Python + PyGame + ROS**
-
-Created a graphical interface to control a 6-DOF robotic arm with real-time inverse kinematics feedback.
-
-![Robot Arm UI](/images/robot_arm_ui.png)
-
-*Interface allows point-and-click motion planning and trajectory visualization.*
-
----
-
-### 📡 High-Gain Antenna Tracker
-
-**Fall 2022 – Custom PCB + PID Controller**
-
-Designed and fabricated a dual-axis antenna tracker for weather balloon telemetry.
-
-![Antenna Tracker](/images/antenna_tracker.png)
-
-![PCB Closeup](/images/antenna_tracker_pcb.jpg)
-
-*Used STM32 microcontroller and Kalman filtering for accurate sun tracking.*
-
----
-
-## Add Your Own Projects
-
-To add more entries:
-
-1. Start with a `### Project Title`
-2. Add a **text paragraph**
-3. Include an **embedded video** or image:
-   - YouTube: use the `<iframe>` snippet above
-   - Images: `![Alt Text](/images/your_image.png)`
-
----
-
-Let me know if you want:
-- Grid layout instead of stacked
-- Lightbox-style image popups
-- Filter by category (e.g. "robotics", "software")
+ -->
