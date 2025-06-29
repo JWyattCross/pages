@@ -35,7 +35,7 @@ For a more comprehensive overview of my work, including detailed reports and doc
 - Developed Python calculators to find coefficients from simulation and experimental data using a pseudoinverse to approximate a least squares solution  
 - Documented simulations for future replication in OpenFOAM as the UUV configuration changes  
 
-{% include gallery.html caption="Hydrodynamic coefficient estimation using CFD simulations." %}
+{% include gallery1 caption="Hydrodynamic coefficient estimation using CFD simulations." id="gallery2"%}
 
 <!-- <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
   <img src="/files/cfd.gif" alt="CFD Simulation" style="max-width: 30%; border-radius: 8px;">
