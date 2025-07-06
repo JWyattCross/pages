@@ -20,6 +20,19 @@ gallery1:
     title: Coefficient Plots
     alt: Plot showing CFD-extracted coefficients
 
+gallery2:
+  - image_path: /images/herding_simulation.gif
+    url: /images/herding_simulation.gif
+    title: Herding Simulation
+
+  - image_path: /images/dogs.jpg
+    url: /images/dogs.jpg
+    title: Quadruped Robots
+
+  - image_path: /images/rviz_sim.png
+    url: /images/rviz_sim.png
+    title: RVIZ Environment
+
 ---
 
 Welcome to my portfolio showcasing selected projects and demonstrations.  
@@ -37,12 +50,6 @@ For a more comprehensive overview of my work, including detailed reports and doc
 
 {% include gallery id="gallery1"%}
 
-<!-- <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-  <img src="/files/cfd.gif" alt="CFD Simulation" style="max-width: 30%; border-radius: 8px;">
-  <img src="/files/cfd_static.png" alt="UUV Design" style="max-width: 30%; border-radius: 8px;">
-  <img src="/files/cfd_plots.png" alt="Coefficient Determination Design" style="max-width: 30%; border-radius: 8px;">
-</div> -->
-
 ---
 
 ### UF Nonlinear Controls and Robotics Group  
@@ -53,28 +60,4 @@ For a more comprehensive overview of my work, including detailed reports and doc
 - Wrote ROS 2 Python packages to share and compare vehicle position between 8+ robots, allowing agents to be “neutralized” to facilitate herding/swarming experiments  
 - Built and deployed a remote emergency stop system using C++ and Arduino for 30+ robots  
 
-<div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-  <img src="/images/robot_parts.jpg" alt="Robot Parts" style="max-width: 48%; border-radius: 8px;">
-  <img src="/images/robotics_experiment.jpg" alt="Robotics Experiment" style="max-width: 48%; border-radius: 8px;">
-</div>
-
-
-
-<!-- 
-## Selected Projects
-
----
-
-### 🦾 Autonomous Rover Navigation Demo
-
-**Spring 2024 – University of Florida**
-
-This project showcases a 4WD rover navigating a simulated Martian terrain using LiDAR and SLAM.
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-  <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen
-    style="position: absolute; top:0; left: 0; width: 100%; height: 100%;"></iframe>
-</div>
-
-*Implemented using ROS2 and RViz. Mapping accuracy improved over 10 trials.*
- -->
+{% include gallery id="gallery2"%}
