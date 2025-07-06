@@ -14,9 +14,9 @@ My research interests are focused on robotic systems and adaptive control. I am 
 
 News
 ------
-- [04/2025] I presented my paper XXXXX at the XXXXX
+- [04/2025] I presented a robotics paper *Development of an Outdoor Aerial Multi-Agent Robot Toolkit at the UF Autonomy Park* at the 76th AIAA Region II Student Conference.
 
 
 Recent Videos
 ------
-XXXXX
+- [2024] I documented research facility procedures in video form to assist with onboarding. Some of the videos are available on [autonomypark.org/tutorials/hardware](https://autonomypark.org/tutorials/hardware/) and [autonomypark.org/tutorials/software](https://autonomypark.org/tutorials/software/).
