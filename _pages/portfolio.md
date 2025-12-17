@@ -33,12 +33,36 @@ gallery2:
     url: /images/rviz_sim.png
     title: RVIZ Environment
 
+
+gallery3:
+  - image_path: /images/2025quad.png
+    url: /images/2025quad.png
+    title: Quad Chart
+
+  - image_path: /images/uuvBobbing.gif
+    url: /images/uuvBobbing.gif
+    title: UUV Bobbing
+
+  - image_path: /images/waypointMission.gif
+    url: /images/waypointMission.gif
+    title: Waypoint Mission
+
 ---
 
 Welcome to my portfolio showcasing selected projects and demonstrations.  
 For a more comprehensive overview of my work, including detailed reports and documentation, please see my [full PDF portfolio](/files/Cross_James_Engineering_Portfolio2024.pdf).
 
 ## Professional Experience
+
+### Naval Surface Warfare Center, Panama City Division  
+*Engineering Intern* — Panama City, FL | May 2025 – August 2025
+
+- Developed a real-time rigid-body-dynamics simulator for 6-dof underwater vehicles in C++
+- Incorporated free surface wave dynamics models to test controllers against external disturbances
+- Rewrote mesh mover code to transition from a custom format to triangular meshes in .stl files
+- Consolidated program controls and developed a workflow to visualize trajectories in ParaView
+
+{% include gallery id="gallery3"%}
 
 ### Naval Surface Warfare Center, Panama City Division  
 *Engineering Intern* — Panama City, FL | May 2024 – July 2024
