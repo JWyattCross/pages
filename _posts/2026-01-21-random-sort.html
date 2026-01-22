@@ -14,26 +14,34 @@ excerpt: false
     background: #fff;
     padding: 1.25rem;
     border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
-  #random-list-widget h3 { margin: 0 0 0.75rem 0; font-size: 1.15rem; text-align:center; }
+
+  #random-list-widget h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.15rem;
+    text-align: center;
+  }
+
   #random-list-widget .item-input {
     width: 100%;
     box-sizing: border-box;
     padding: 0.6rem 0.7rem;
     margin-bottom: 0.5rem;
-    border: 1px solid rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 7px;
     font-size: 0.98rem;
     background: #fff;
   }
+
   #random-list-widget .item-input:focus {
     outline: none;
-    border-color: rgba(74,144,226,0.9);
-    box-shadow: 0 0 0 3px rgba(74,144,226,0.15);
+    border-color: rgba(74, 144, 226, 0.9);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
   }
+
   #random-list-widget button {
     width: 100%;
     margin-top: 0.75rem;
@@ -45,7 +53,10 @@ excerpt: false
     background: #4a90e2;
     color: #fff;
   }
-  #random-list-widget button:hover { filter: brightness(0.95); }
+
+  #random-list-widget button:hover {
+    filter: brightness(0.95);
+  }
 </style>
 
 <div class="rlw-widget">
@@ -55,26 +66,67 @@ excerpt: false
 </div>
 
 <style>
-  .rlw-widget{
-    max-width:520px;margin:1.5rem auto;background:#fff;padding:1.25rem;
-    border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.08);
-    border:1px solid rgba(0,0,0,.08);
-    font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+  .rlw-widget {
+    max-width: 520px;
+    margin: 1.5rem auto;
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .08);
+    border: 1px solid rgba(0, 0, 0, .08);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
-  .rlw-widget h3{margin:0 0 .75rem 0;font-size:1.15rem;text-align:center;}
-  .rlw-widget .rlw-item{
-    width:100%;box-sizing:border-box;padding:.6rem .7rem;margin-bottom:.5rem;
-    border:1px solid rgba(0,0,0,.2);border-radius:7px;font-size:.98rem;background:#fff;
+
+  .rlw-widget h3 {
+    margin: 0 0 .75rem 0;
+    font-size: 1.15rem;
+    text-align: center;
   }
-  .rlw-widget .rlw-item:focus{
-    outline:none;border-color:rgba(74,144,226,.9);
-    box-shadow:0 0 0 3px rgba(74,144,226,.15);
+
+  .rlw-widget .rlw-item {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .6rem .7rem;
+    margin-bottom: .5rem;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 7px;
+    font-size: .98rem;
+    background: #fff;
   }
-  .rlw-widget .rlw-randomize{
-    width:100%;margin-top:.75rem;padding:.7rem;font-size:1rem;border:none;
-    border-radius:8px;cursor:pointer;background:#4a90e2;color:#fff;
+
+  .rlw-widget .rlw-item:focus {
+    outline: none;
+    border-color: rgba(74, 144, 226, .9);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, .15);
   }
-  .rlw-widget .rlw-randomize:hover{filter:brightness(.95);}
+
+  .rlw-widget .rlw-randomize {
+    width: 100%;
+    margin-top: .75rem;
+    padding: .7rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #4a90e2;
+    color: #fff;
+  }
+
+  .rlw-widget .rlw-randomize:hover {
+    filter: brightness(.95);
+  }
+
+  .rlw-row {
+    margin-bottom: 0.5rem;
+  }
+
+  .rlw-handle {
+    opacity: 0.85;
+  }
+
+  .rlw-handle:hover {
+    opacity: 1;
+  }
 </style>
 
 <script src="{{ '/assets/js/random-sort.js' | relative_url }}"></script>
