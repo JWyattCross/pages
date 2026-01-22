@@ -53,76 +53,112 @@ author_profile: false
   #random-list-widget button:hover { filter: brightness(0.95); }
 </style>
 
+<div class="rlw-widget">
+  <h3>Random List Sorter</h3>
+  <div class="rlw-list"></div>
+  <button type="button" class="rlw-randomize">Randomize Order</button>
+</div>
+
+<style>
+  .rlw-widget{
+    max-width:520px;margin:1.5rem auto;background:#fff;padding:1.25rem;
+    border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.08);
+    border:1px solid rgba(0,0,0,.08);
+    font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  .rlw-widget h3{margin:0 0 .75rem 0;font-size:1.15rem;text-align:center;}
+  .rlw-widget .rlw-item{
+    width:100%;box-sizing:border-box;padding:.6rem .7rem;margin-bottom:.5rem;
+    border:1px solid rgba(0,0,0,.2);border-radius:7px;font-size:.98rem;background:#fff;
+  }
+  .rlw-widget .rlw-item:focus{
+    outline:none;border-color:rgba(74,144,226,.9);
+    box-shadow:0 0 0 3px rgba(74,144,226,.15);
+  }
+  .rlw-widget .rlw-randomize{
+    width:100%;margin-top:.75rem;padding:.7rem;font-size:1rem;border:none;
+    border-radius:8px;cursor:pointer;background:#4a90e2;color:#fff;
+  }
+  .rlw-widget .rlw-randomize:hover{filter:brightness(.95);}
+</style>
+
 <script>
-(function() {
-  const mount = document.getElementById("random-list-widget");
-  const list = mount.querySelector(".list");
-  const btn  = document.getElementById("randomizeBtn");
+(function(){
+  function initWidget(root){
+    const list = root.querySelector(".rlw-list");
+    const btn  = root.querySelector(".rlw-randomize");
 
-  function createInput(value = "", shouldFocus = false) {
-    const input = document.createElement("input");
-    input.type = "text";
-    input.className = "item-input";
-    input.placeholder = "Type item...";
-    input.value = value;
+    function createInput(value="", shouldFocus=false){
+      const input = document.createElement("input");
+      input.type = "text";
+      input.className = "rlw-item";
+      input.placeholder = "Type item...";
+      input.value = value;
 
-    input.addEventListener("input", () => {
-      const inputs = list.querySelectorAll(".item-input");
-      const isLast = input === inputs[inputs.length - 1];
-      if (isLast && input.value.trim() !== "") {
-        // add next row but DON'T focus it (prevents scroll jump)
-        createInput("", false);
-      }
-    });
+      input.addEventListener("input", () => {
+        const inputs = list.querySelectorAll(".rlw-item");
+        const isLast = input === inputs[inputs.length - 1];
+        if (isLast && input.value.trim() !== "") {
+          // add next row but DON'T focus it (prevents scroll jump)
+          createInput("", false);
+        }
+      });
 
-    input.addEventListener("blur", cleanup);
+      input.addEventListener("blur", cleanup);
 
-    input.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        input.blur();
-        const inputs = list.querySelectorAll(".item-input");
-        const last = inputs[inputs.length - 1];
-        if (last && last.value.trim() !== "") createInput("", true);
-      }
-    });
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          input.blur();
+          const inputs = list.querySelectorAll(".rlw-item");
+          const last = inputs[inputs.length - 1];
+          if (last && last.value.trim() !== "") createInput("", true);
+        }
+      });
 
-    list.appendChild(input);
-    if (shouldFocus) input.focus();
-  }
-
-  function cleanup() {
-    const inputs = Array.from(list.querySelectorAll(".item-input"));
-    inputs.forEach((inp, idx) => {
-      const isLast = idx === inputs.length - 1;
-      if (!isLast && inp.value.trim() === "") inp.remove();
-    });
-    const after = Array.from(list.querySelectorAll(".item-input"));
-    const last = after[after.length - 1];
-    if (!last || last.value.trim() !== "") createInput("", false);
-  }
-
-  function shuffleArray(a) {
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+      list.appendChild(input);
+      if (shouldFocus) input.focus();
     }
-    return a;
+
+    function cleanup(){
+      const inputs = Array.from(list.querySelectorAll(".rlw-item"));
+      inputs.forEach((inp, idx) => {
+        const isLast = idx === inputs.length - 1;
+        if (!isLast && inp.value.trim() === "") inp.remove();
+      });
+      const after = Array.from(list.querySelectorAll(".rlw-item"));
+      const last = after[after.length - 1];
+      if (!last || last.value.trim() !== "") createInput("", false);
+    }
+
+    function shuffle(a){
+      for (let i = a.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    btn.addEventListener("click", () => {
+      const values = Array.from(list.querySelectorAll(".rlw-item"))
+        .map(i => i.value.trim())
+        .filter(v => v !== "");
+
+      shuffle(values);
+
+      list.innerHTML = "";
+      values.forEach(v => createInput(v, false));
+      createInput("", false);
+    });
+
+    // init
+    list.innerHTML = "";
+    createInput("", true);
   }
 
-  btn.addEventListener("click", () => {
-    const values = Array.from(list.querySelectorAll(".item-input"))
-      .map(i => i.value.trim())
-      .filter(v => v !== "");
-
-    shuffleArray(values);
-
-    list.innerHTML = "";
-    values.forEach(v => createInput(v, false));
-    createInput("", false);
+  // Ensure DOM exists even if theme moves things around
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".rlw-widget").forEach(initWidget);
   });
-
-  // initial input, focus only once
-  createInput("", true);
 })();
 </script>
