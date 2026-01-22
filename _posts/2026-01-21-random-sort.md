@@ -1,0 +1,134 @@
+---
+title: "Random Sort"
+collection: posts
+permalink: /posts/random-sort/
+date: 2026-01-21
+---
+
+<div id="random-list-widget"></div>
+
+<style>
+  /* scoped so it doesn't mess with your site theme */
+  #random-list-widget {
+    max-width: 520px;
+    margin: 1.5rem auto;
+    background: #fff;
+    padding: 1.25rem 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.08);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  #random-list-widget h3 { margin: 0 0 0.75rem 0; font-size: 1.15rem; text-align:center; }
+  #random-list-widget .item-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.6rem 0.7rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 7px;
+    font-size: 0.98rem;
+    background: #fff;
+  }
+  #random-list-widget .item-input:focus {
+    outline: none;
+    border-color: rgba(74,144,226,0.9);
+    box-shadow: 0 0 0 3px rgba(74,144,226,0.15);
+  }
+  #random-list-widget button {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #4a90e2;
+    color: #fff;
+  }
+  #random-list-widget button:hover { filter: brightness(0.95); }
+</style>
+
+<script>
+(function() {
+  const mount = document.getElementById("random-list-widget");
+  if (!mount) return;
+
+  mount.innerHTML = `
+    <h3>Random List Sorter</h3>
+    <div class="list"></div>
+    <button type="button">Randomize Order</button>
+  `;
+
+  const list = mount.querySelector(".list");
+  const btn  = mount.querySelector("button");
+
+  function createInput(value = "", shouldFocus = false) {
+    const input = document.createElement("input");
+    input.type = "text";
+    input.className = "item-input";
+    input.placeholder = "Type item...";
+    input.value = value;
+
+    input.addEventListener("input", () => {
+      const inputs = list.querySelectorAll(".item-input");
+      const isLast = input === inputs[inputs.length - 1];
+      if (isLast && input.value.trim() !== "") {
+        // create next row but DO NOT focus it (prevents scroll jump)
+        createInput("", false);
+      }
+    });
+
+    input.addEventListener("blur", cleanup);
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        input.blur(); // triggers cleanup
+        const inputs = list.querySelectorAll(".item-input");
+        const last = inputs[inputs.length - 1];
+        if (last && last.value.trim() !== "") createInput("", true);
+      }
+    });
+
+    list.appendChild(input);
+    if (shouldFocus) input.focus();
+  }
+
+  function cleanup() {
+    const inputs = Array.from(list.querySelectorAll(".item-input"));
+    // remove empty inputs except the last one
+    inputs.forEach((inp, idx) => {
+      const isLast = idx === inputs.length - 1;
+      if (!isLast && inp.value.trim() === "") inp.remove();
+    });
+    // guarantee there is always one empty input at end
+    const after = Array.from(list.querySelectorAll(".item-input"));
+    const last = after[after.length - 1];
+    if (!last || last.value.trim() !== "") createInput("", false);
+  }
+
+  function shuffleArray(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  btn.addEventListener("click", () => {
+    const values = Array.from(list.querySelectorAll(".item-input"))
+      .map(i => i.value.trim())
+      .filter(v => v !== "");
+
+    shuffleArray(values);
+
+    list.innerHTML = "";
+    values.forEach(v => createInput(v, false));
+    createInput("", false);
+  });
+
+  // initial row, focus only once
+  createInput("", true);
+})();
+</script>
