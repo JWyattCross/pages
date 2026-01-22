@@ -5,13 +5,8 @@ permalink: /posts/random-sort/
 layout: single
 author_profile: false
 excerpt: false
+show_date: false
 ---
-
-<div id="random-list-widget">
-  <h3>Random Sort</h3>
-  <div class="list"></div>
-  <button type="button" id="randomizeBtn">Randomize Order</button>
-</div>
 
 <style>
   #random-list-widget {
@@ -55,7 +50,7 @@ excerpt: false
 </style>
 
 <div class="rlw-widget">
-  <h3>Random List Sorter</h3>
+  <h3>Random Sort</h3>
   <div class="rlw-list"></div>
   <button type="button" class="rlw-randomize">Randomize Order</button>
 </div>
@@ -158,8 +153,6 @@ excerpt: false
   }
 
   // Ensure DOM exists even if theme moves things around
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".rlw-widget").forEach(initWidget);
-  });
+  document.querySelectorAll(".rlw-widget").forEach(initWidget);
 })();
 </script>
