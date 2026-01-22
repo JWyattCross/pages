@@ -1,19 +1,23 @@
 ---
 title: "Random Sort"
-collection: posts
-permalink: /posts/random-sort/
 date: 2026-01-21
+permalink: /posts/random-sort/
+layout: single
+author_profile: false
 ---
 
-<div id="random-list-widget"></div>
+<div id="random-list-widget">
+  <h3>Random Sort</h3>
+  <div class="list"></div>
+  <button type="button" id="randomizeBtn">Randomize Order</button>
+</div>
 
 <style>
-  /* scoped so it doesn't mess with your site theme */
   #random-list-widget {
     max-width: 520px;
     margin: 1.5rem auto;
     background: #fff;
-    padding: 1.25rem 1.25rem;
+    padding: 1.25rem;
     border-radius: 10px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     border: 1px solid rgba(0,0,0,0.08);
@@ -52,16 +56,8 @@ date: 2026-01-21
 <script>
 (function() {
   const mount = document.getElementById("random-list-widget");
-  if (!mount) return;
-
-  mount.innerHTML = `
-    <h3>Random List Sorter</h3>
-    <div class="list"></div>
-    <button type="button">Randomize Order</button>
-  `;
-
   const list = mount.querySelector(".list");
-  const btn  = mount.querySelector("button");
+  const btn  = document.getElementById("randomizeBtn");
 
   function createInput(value = "", shouldFocus = false) {
     const input = document.createElement("input");
@@ -74,7 +70,7 @@ date: 2026-01-21
       const inputs = list.querySelectorAll(".item-input");
       const isLast = input === inputs[inputs.length - 1];
       if (isLast && input.value.trim() !== "") {
-        // create next row but DO NOT focus it (prevents scroll jump)
+        // add next row but DON'T focus it (prevents scroll jump)
         createInput("", false);
       }
     });
@@ -84,7 +80,7 @@ date: 2026-01-21
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
         e.preventDefault();
-        input.blur(); // triggers cleanup
+        input.blur();
         const inputs = list.querySelectorAll(".item-input");
         const last = inputs[inputs.length - 1];
         if (last && last.value.trim() !== "") createInput("", true);
@@ -97,12 +93,10 @@ date: 2026-01-21
 
   function cleanup() {
     const inputs = Array.from(list.querySelectorAll(".item-input"));
-    // remove empty inputs except the last one
     inputs.forEach((inp, idx) => {
       const isLast = idx === inputs.length - 1;
       if (!isLast && inp.value.trim() === "") inp.remove();
     });
-    // guarantee there is always one empty input at end
     const after = Array.from(list.querySelectorAll(".item-input"));
     const last = after[after.length - 1];
     if (!last || last.value.trim() !== "") createInput("", false);
@@ -128,7 +122,7 @@ date: 2026-01-21
     createInput("", false);
   });
 
-  // initial row, focus only once
+  // initial input, focus only once
   createInput("", true);
 })();
 </script>
