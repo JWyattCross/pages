@@ -5,7 +5,6 @@ permalink: /posts/random-sort/
 layout: single
 author_profile: false
 excerpt: false
-show_date: false
 ---
 
 <style>
@@ -78,81 +77,4 @@ show_date: false
   .rlw-widget .rlw-randomize:hover{filter:brightness(.95);}
 </style>
 
-<script>
-(function(){
-  function initWidget(root){
-    const list = root.querySelector(".rlw-list");
-    const btn  = root.querySelector(".rlw-randomize");
-
-    function createInput(value="", shouldFocus=false){
-      const input = document.createElement("input");
-      input.type = "text";
-      input.className = "rlw-item";
-      input.placeholder = "Type item...";
-      input.value = value;
-
-      input.addEventListener("input", () => {
-        const inputs = list.querySelectorAll(".rlw-item");
-        const isLast = input === inputs[inputs.length - 1];
-        if (isLast && input.value.trim() !== "") {
-          // add next row but DON'T focus it (prevents scroll jump)
-          createInput("", false);
-        }
-      });
-
-      input.addEventListener("blur", cleanup);
-
-      input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          input.blur();
-          const inputs = list.querySelectorAll(".rlw-item");
-          const last = inputs[inputs.length - 1];
-          if (last && last.value.trim() !== "") createInput("", true);
-        }
-      });
-
-      list.appendChild(input);
-      if (shouldFocus) input.focus();
-    }
-
-    function cleanup(){
-      const inputs = Array.from(list.querySelectorAll(".rlw-item"));
-      inputs.forEach((inp, idx) => {
-        const isLast = idx === inputs.length - 1;
-        if (!isLast && inp.value.trim() === "") inp.remove();
-      });
-      const after = Array.from(list.querySelectorAll(".rlw-item"));
-      const last = after[after.length - 1];
-      if (!last || last.value.trim() !== "") createInput("", false);
-    }
-
-    function shuffle(a){
-      for (let i = a.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
-    }
-
-    btn.addEventListener("click", () => {
-      const values = Array.from(list.querySelectorAll(".rlw-item"))
-        .map(i => i.value.trim())
-        .filter(v => v !== "");
-
-      shuffle(values);
-
-      list.innerHTML = "";
-      values.forEach(v => createInput(v, false));
-      createInput("", false);
-    });
-
-    // init
-    list.innerHTML = "";
-    createInput("", true);
-  }
-
-  // Ensure DOM exists even if theme moves things around
-  document.querySelectorAll(".rlw-widget").forEach(initWidget);
-})();
-</script>
+<script src="{{ '/assets/js/random-sort.js' | relative_url }}"></script>
