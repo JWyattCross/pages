@@ -11,6 +11,7 @@ author_profile: true
 Undergraduate course, Mechanical & Aerospace Engineering, University of Florida. Fall 2026
 Instructor: Dr. Jonathan Brooks
 
+[Intro to Control in MATLAB.pdf](/files/Intro_to_Control_in_MATLAB.pdf) (503KB)
 
 **EGM 3344 – Introduction to Numerical Methods of Engineering**  
 Undergraduate course, Mechanical & Aerospace Engineering, University of Florida. Spring, Summer & Fall 2025  
