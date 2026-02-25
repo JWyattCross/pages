@@ -8,7 +8,7 @@ author_profile: true
 ## Teaching Assistant Roles
 
 **EML 4312 – Control of Dynamic Systems**  
-Undergraduate course, Mechanical & Aerospace Engineering, University of Florida. Fall 2026.
+Undergraduate course, Mechanical & Aerospace Engineering, University of Florida. Spring 2026.
 Instructor: Dr. Jonathan Brooks
 
 [Intro to Control in MATLAB.pdf](/files/Intro_to_Control_in_MATLAB.pdf) (503KB)
